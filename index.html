@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<a href="#" class="button">ok</a><!-- a button-->
+
+		<nav>
+			<ul>
+				<li><a href="albums">Albums</a></li>
+			    <li><a href="bio">Bio</a></li>
+			    <li><a href="shows">Shows</a></li>
+			    <li><a href="contact">Contact</a></li>
+			</ul>
+
+		</nav>
+
+<!-- look at old websites on how to set up nav// we use a tags with a nav as well GOOD-->
+<!-- for the buttons use an <a href="#( put # bc it's gonna be a link but we don't know the link yet)" class="button">...</a>tag (hyperlink tag) and give it a class of button-->
+<!-- use the flex box stuff to make things fill up left and right-->
+	</header>
+	<div class="title-wrap" id="Top">
+	<h1>MARIAH CAREY</h1>
+	</div>
+
+	<main>
+
+    <div id="carousel">
+
+      <div class="hideLeft">
+        <img src="the-emancipation-of-mimi.jpg">
+      </div>
+
+      <div class="prevLeftSecond">
+        <img src="the-emancipation-of-mimi.jpg">
+      </div>
+
+      <div class="prev">
+        <img src="mariah-carey.jpg">
+      </div>
+
+      <div class="selected">
+        <img src="daydream.jpg">
+      </div>
+
+      <div class="next">
+        <img src="butterfly.jpg">
+      </div>
+
+      <div class="nextRightSecond">
+        <img src="emotions.jpg">
+      </div>
+
+      <div class="hideRight">
+        <img src="the-emancipation-of-mimi.jpg">
+      </div>
+
+    </div>
+
+    <div class="buttons">
+      <button id="prev">Prev</button>
+      <button id="next">Next</button>
+    </div>
+
+  </main>
+  <script type="text/javascript">
+
+  	function moveToSelected(element) {
+
+	  if (element == "next") {
+	    var selected = $(".selected").next();
+	  } else if (element == "prev") {
+	    var selected = $(".selected").prev();
+	  } else {
+	    var selected = element;
+	  }
+
+	  var next = $(selected).next();
+	  var prev = $(selected).prev();
+	  var prevSecond = $(prev).prev();
+	  var nextSecond = $(next).next();
+
+	  $(selected).removeClass().addClass("selected");
+
+	  $(prev).removeClass().addClass("prev");
+	  $(next).removeClass().addClass("next");
+
+	  $(nextSecond).removeClass().addClass("nextRightSecond");
+	  $(prevSecond).removeClass().addClass("prevLeftSecond");
+
+	  $(nextSecond).nextAll().removeClass().addClass('hideRight');
+	  $(prevSecond).prevAll().removeClass().addClass('hideLeft');
+
+	}
+
+	// Eventos teclado
+	// $(document).keydown(function(e) {
+	//     switch(e.which) {
+	//         case 37: // left
+	//         moveToSelected('prev');
+	//         break;
+
+	//         case 39: // right
+	//         moveToSelected('next');
+	//         break;
+
+	//         default: return;
+	//     }
+	//     e.preventDefault();
+	// });
+
+	// $('#carousel div').click(function() {
+	//   moveToSelected($(this));
+	// });
+
+	// $('#prev').click(function() {
+	//   moveToSelected('prev');
+	// });
+
+	// $('#next').click(function() {
+	//   moveToSelected('next');
+	// });
+
+  </script>
+	<!--
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+		<ol class="carousel-indicators">
+		    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		    <li data-target="#myCarousel" data-slide-to="1"></li>
+		    <li data-target="#myCarousel" data-slide-to="2"></li>
+		    <li data-target="#myCarousel" data-slide-to="3"></li>
+		    <li data-target="#myCarousel" data-slide-to="4"></li>
+		</ol>
+
+		<div class="carousel-inner">
+		    <div class="item active">
+		      <img src="the-emancipation-of-mimi.jpg" alt="The Emancipation of Mimi">
+		      <div class="carousel-caption">
+		        <h3>The Emancipation of Mimi</h3>
+		        <p>2005</p>
+		      </div>
+		    </div>
+
+			<div class="item">
+		      <img src="mariah-carey.jpg" alt="Mariah Carey">
+		      <div class="carousel-caption">
+		        <h3>Mariah Carey</h3>
+		        <p>1990</p>
+		      </div>
+		    </div>
+			
+			<div class="item">
+		      <img src="daydream.jpg" alt="Daydream">
+		      <div class="carousel-caption">
+		        <h3>Daydream</h3>
+		        <p>1995</p>
+		      </div>
+		    </div>
+
+		    <div class="item">
+		      <img src="butterfly.jpg" alt="Butterfly">
+		      <div class="carousel-caption">
+		        <h3>Butterfly</h3>
+		        <p>1997</p>
+		      </div>
+		    </div>
+
+		    <div class="item">
+		      <img src="emotions.jpg" alt="Emotions">
+		      <div class="carousel-caption">
+		        <h3>Emotions</h3>
+		        <p>1991</p>
+		      </div>
+		    </div>
+		</div>
+
+		<a class="left carousel-control" href="#myCarousel" data-slide="prev">
+		    <span class="glyphicon glyphicon-chevron-left"></span>
+		    <span class="sr-only">Previous</span>
+	  	</a>
+		<a class="right carousel-control" href="#myCarousel" data-slide="next">
+		    <span class="glyphicon glyphicon-chevron-right"></span>
+		    <span class="sr-only">Next</span>
+		</a>
+	</div>
+	-->
+
+	<!--
+		<a href="#" class="button"></a>
+		<img src="the-emancipation-of-mimi.jpg">
+		<img src="mariah-carey.jpg">
+		<img src="daydream.jpg">
+		<img src="butterfly.jpg">
+		<img src="emotions.jpg">
+		<a href="#" class="button"></a>
+
+	-->
+		
+	<section class="bio">
+		<div class="title-wrap">
+			<h1>BIO</h1>
+		</div>
+		<p>	Mariah Carey was born March 27,<br> 1970, in Huntington, Long Island, New<br> York, and began taking voice lessons at<br> age four. At 18 she signed with<br> Columbia Records, and her first album<br> had four No. 1 singles, including "Vision<br> of Love" and "I Don't Wanna Cry." Carey<br> went on to generate several more<br> albums (later with other studios) and<br> top singles, becoming one of the most<br> commercially successful artists of all<br> time with 18 No. 1 hits and more than<br> 200 million records sold.</p>
+	</section>
+
+	<section class="shows">
+		<div class="title-wrap">
+			<h1>SHOWS</h1>
+		</div>
+			<div class="left-column">
+				<div>
+					<h2>
+						22<br>
+						Fri<br>
+						NOV
+					</h2>
+					<h3>The Colosseum at Caesars Palace, Las Vegas, NV</h3>
+				</div>
+
+				<div>
+					<h2>
+						27<br>
+						Wed<br>
+						NOV
+					</h2>
+					<h3>The Colosseum at Caesars Palace, Las Vegas, NV</h3>
+				</div>
+
+				<div>
+					<h2>
+						07<br>
+						Sat<br>
+						Dec
+					</h2>
+					<h3>Mark G Etess Arena at Hard Rock Hotel & Casino, Atlantic City, NJ</h3>
+				</div>
+
+				<div>
+					<h2>
+						09<br>
+						Mon<br>
+						Dec
+					</h2>
+					<h3>The Theater at MGM National Harbor, National Harbor, MD, US</h3>
+				</div>
+
+			</div>
+
+			<div class="right-column">
+				<div>
+					<h2>
+						12<br>
+						Thurs<br>
+						Dec
+					</h2>
+					<h3>Mohegan Sun Arena, Uncasville, CT</h3>
+				</div>
+
+				<div>
+					<h2>
+						13<br>
+						Fri<br>
+						Dec
+					</h2>
+					<h3>Boch Center Wang Theatre, Boston, MA</h3>
+				</div>
+
+				<div>
+					<h2>
+						14<br>
+						Sat<br>
+						Dec
+					</h2>
+					<h3>Madison Square Garden, New York (NYC), NY</h3>
+				</div>
+
+				<div>
+					<h2>
+						15<br>
+						Sun<br>
+						Dec
+					</h2>
+					<h3>The Colosseum at Caesars Palace, Las Vegas, NV</h3>
+				</div>
+			</div>
+
+			<div class="buy-tickets">
+				<a href="buy tickets">Buy tickets</a>
+			</div>
+			
+	</section>
+
+	<section class="contact">
+		<div class="title-wrap">
+			<h1>CONTACT US</h1>
+		</div>
+		<div class="form">
+			<h3>Email for Weekly Newsletter</h3>
+			<form>
+				<input type="text">
+				<input type="submit">
+			</form>
+		</div>
+	</section>
+	<!-- when ready for the email form:
+		<form>
+			<input type="text"
+			<input type="text"
+		</form>
+	-->
+	<section class="socialmedia">
+		<div class="footer">
+			<svg enable-background="new 0 0 24 24" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><linearGradient id="SVGID_1_" gradientTransform="matrix(0 -1.982 -1.844 0 -132.522 -51.077)" gradientUnits="userSpaceOnUse" x1="-37.106" x2="-26.555" y1="-72.705" y2="-84.047"><stop offset="0" stop-color="#fd5"/><stop offset=".5" stop-color="#ff543e"/><stop offset="1" stop-color="#c837ab"/></linearGradient><path d="m1.5 1.633c-1.886 1.959-1.5 4.04-1.5 10.362 0 5.25-.916 10.513 3.878 11.752 1.497.385 14.761.385 16.256-.002 1.996-.515 3.62-2.134 3.842-4.957.031-.394.031-13.185-.001-13.587-.236-3.007-2.087-4.74-4.526-5.091-.559-.081-.671-.105-3.539-.11-10.173.005-12.403-.448-14.41 1.633z" fill="url(#SVGID_1_)"/><path d="m11.998 3.139c-3.631 0-7.079-.323-8.396 3.057-.544 1.396-.465 3.209-.465 5.805 0 2.278-.073 4.419.465 5.804 1.314 3.382 4.79 3.058 8.394 3.058 3.477 0 7.062.362 8.395-3.058.545-1.41.465-3.196.465-5.804 0-3.462.191-5.697-1.488-7.375-1.7-1.7-3.999-1.487-7.374-1.487zm-.794 1.597c7.574-.012 8.538-.854 8.006 10.843-.189 4.137-3.339 3.683-7.211 3.683-7.06 0-7.263-.202-7.263-7.265 0-7.145.56-7.257 6.468-7.263zm5.524 1.471c-.587 0-1.063.476-1.063 1.063s.476 1.063 1.063 1.063 1.063-.476 1.063-1.063-.476-1.063-1.063-1.063zm-4.73 1.243c-2.513 0-4.55 2.038-4.55 4.551s2.037 4.55 4.55 4.55 4.549-2.037 4.549-4.55-2.036-4.551-4.549-4.551zm0 1.597c3.905 0 3.91 5.908 0 5.908-3.904 0-3.91-5.908 0-5.908z" fill="#fff"/></svg>
+
+			<svg height="512pt" viewBox="0 0 512 512" width="512pt" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><linearGradient id="a"><stop offset="0" stop-color="#ff5e50"/><stop offset=".249" stop-color="#fe5c6c"/><stop offset=".3765" stop-color="#e3658a"/><stop offset=".497" stop-color="#b87eb0"/><stop offset=".6267" stop-color="#916cff"/><stop offset=".7628" stop-color="#70bcfb" stop-opacity=".917647"/><stop offset="1" stop-color="#21c7fe"/></linearGradient><linearGradient id="b" gradientTransform="matrix(2.8346 0 0 -2.8346 -2983.6272 5210.2773)" gradientUnits="userSpaceOnUse" x1="1092.0836" x2="1194.8329" xlink:href="#a" y1="1813.7263" y2="1680.365"/><linearGradient id="c" gradientTransform="matrix(2.8346 0 0 -2.8346 -2983.6272 5210.2773)" gradientUnits="userSpaceOnUse" x1="1091.8068" x2="1194.556" xlink:href="#a" y1="1813.5131" y2="1680.1516"/><path d="m256 0c-141.386719 0-256 114.613281-256 256s114.613281 256 256 256 256-114.613281 256-256-114.613281-256-256-256zm0 490.496094c-129.507812 0-234.496094-104.988282-234.496094-234.496094s104.988282-234.496094 234.496094-234.496094 234.496094 104.988282 234.496094 234.496094-104.988282 234.496094-234.496094 234.496094zm0 0" fill="url(#b)"/><path d="m340.269531 376.832031c15.027344-4.511719 25.636719-15.449219 29.984375-30.902343l1.277344-4.546876.167969-121.835937c.128906-91.242187.007812-122.40625-.488281-124.105469-.523438-1.800781-1.347657-3.316406-2.433594-4.511718-1.585938-1.003907-3.5-1.53125-5.664063-1.53125-1.496093 0-6.683593.738281-11.523437 1.640624-21.414063 3.988282-147.636719 29.71875-149.789063 30.53125-3.335937 1.261719-6.640625 4.261719-8.207031 7.445313l-1.328125 2.695313s-.625 190.96875-1.59375 193.121093c-1.472656 3.269531-4.734375 6.371094-7.742187 7.359375-1.425782.46875-7.066407 1.761719-12.535157 2.875-25.324219 5.160156-34.730469 8.875-42.6875 16.867188-4.515625 4.539062-7.863281 10.734375-9.3125 17.238281-1.378906 6.214844-.917969 15.515625 1.054688 21.167969 2.0625 5.917968 5.386719 10.96875 9.734375 14.941406 3.949218 3.117188 8.613281 5.4375 13.855468 6.808594 11.59375 3.039062 33.292969-.339844 44.394532-6.90625 4.636718-2.746094 10.605468-8.511719 13.710937-13.25 1.226563-1.871094 3.078125-5.652344 4.109375-8.390625 3.613282-9.605469 3.726563-180.6875 4.191406-182.84375.78125-3.652344 3.222657-6.332031 6.589844-7.238281 3.03125-.816407 124.570313-25.410157 127.988282-25.898438 3.011718-.429688 5.855468.5625 7.40625 2.515625.921874.507813 1.695312 1.191406 2.242187 2.027344.984375 1.503906 1.046875 4.480469 1.191406 58.644531.171875 62.34375.242188 60.882812-3.066406 64.816406-2.40625 2.863282-5.417969 3.96875-17.769531 6.546875-18.792969 3.925781-25.226563 5.792969-32.421875 9.390625-8.988281 4.492188-13.980469 9.414063-17.835938 17.589844-2.730469 5.785156-3.75 10.121094-3.742187 15.878906.019531 10.292969 3.488281 18.335938 11.316406 26.210938.71875.722656 1.429688 1.398437 2.140625 2.035156 3.945313 3.117188 7.964844 4.996094 13.019531 6.1875 7.625 1.796875 23.144532.613281 33.765625-2.574219zm0 0" fill="url(#c)"/></svg>
+
+			<svg enable-background="new 0 0 24 24" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" fill="#4caf50" r="12"/><g fill="#212121"><path d="m16.872 17.656v.001c-.203 0-.329-.063-.518-.174-3.019-1.82-6.532-1.896-10.002-1.185-.189.049-.436.126-.576.126-.47 0-.765-.373-.765-.765 0-.499.295-.736.659-.813 3.963-.875 8.013-.798 11.467 1.268.295.189.47.358.47.798 0 .438-.344.744-.735.744z"/><path d="m18.175 14.483h-.001c-.252 0-.421-.111-.596-.203-3.025-1.79-7.533-2.512-11.545-1.423-.232.063-.358.126-.576.126-.518 0-.938-.421-.938-.938s.252-.861.75-1.001c1.345-.378 2.719-.659 4.732-.659 3.14 0 6.174.779 8.565 2.202.392.232.547.533.547.953-.005.521-.411.943-.938.943z"/><path d="m4.548 6.998c1.703-.499 3.61-.735 5.686-.735 3.532 0 7.234.735 9.939 2.313.378.218.624.518.624 1.093 0 .658-.533 1.127-1.122 1.127l-.001-.001c-.252 0-.407-.063-.625-.189-3.444-2.056-9.605-2.549-13.591-1.436-.175.048-.393.125-.625.125-.639 0-1.127-.499-1.127-1.142 0-.657.407-1.029.842-1.155z"/></g></svg>
+
+			<?xml version="1.0" encoding="iso-8859-1"?>
+			<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+			<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+			<path style="fill:#03A9F4;" d="M512,97.248c-19.04,8.352-39.328,13.888-60.48,16.576c21.76-12.992,38.368-33.408,46.176-58.016
+				c-20.288,12.096-42.688,20.64-66.56,25.408C411.872,60.704,384.416,48,354.464,48c-58.112,0-104.896,47.168-104.896,104.992
+				c0,8.32,0.704,16.32,2.432,23.936c-87.264-4.256-164.48-46.08-216.352-109.792c-9.056,15.712-14.368,33.696-14.368,53.056
+				c0,36.352,18.72,68.576,46.624,87.232c-16.864-0.32-33.408-5.216-47.424-12.928c0,0.32,0,0.736,0,1.152
+				c0,51.008,36.384,93.376,84.096,103.136c-8.544,2.336-17.856,3.456-27.52,3.456c-6.72,0-13.504-0.384-19.872-1.792
+				c13.6,41.568,52.192,72.128,98.08,73.12c-35.712,27.936-81.056,44.768-130.144,44.768c-8.608,0-16.864-0.384-25.12-1.44
+				C46.496,446.88,101.6,464,161.024,464c193.152,0,298.752-160,298.752-298.688c0-4.64-0.16-9.12-0.384-13.568
+				C480.224,136.96,497.728,118.496,512,97.248z"/>
+			<g>
+			</g>
+			<g>
+			</g>
+			<g>
+			</g>
+			<g>
+			</g>
+			<g>
+			</g>
+			<g>
+			</g>
+			<g>
+			</g>
+			<g>
+			</g>
+			<g>
+			</g>
+			<g>
+			</g>
+			<g>
+			</g>
+			<g>
+			</g>
+			<g>
+			</g>
+			<g>
+			</g>
+			<g>
+			</g>
+			</svg>
+			<img src="instagram-logo.png">
+	</div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,259 @@
+*	{
+	box-sizing: border-box;
+}
+
+body{
+	margin:0;
+	padding: 0;
+	background-color: #30282D; 
+}
+
+header{
+ background-color: #30282D;
+ display: flex;
+ justify-content: space-around;
+ font-family: 'Montserrat', sans-serif;
+}
+
+header .button {
+
+}
+<!--
+header nav {
+	display: flex;
+	justify-content: space-around;
+	width: 80%;
+}
+
+header nav a {
+	background-color: #9E8F99;
+	color: #5C5C5C;
+	padding: 15px;
+	font-family: 'Montserrat';
+}
+-->
+
+nav{
+	background-color: #30282D;
+	text-align: center;
+} 
+nav ul{
+	margin: 0;
+	padding: 0;
+		}
+nav li{
+	list-style-type: none;
+	display: inline-block;
+	padding: 15px 25px;
+}
+nav a{
+	text-decoration: none;
+	color: #5C5C5C;
+}
+.bio {
+	background-image: url(bio-bg.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: 500px;
+	height: 500px;
+	padding: 20px;
+	font-family: 'Montserrat', sans-serif;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.shows{
+	font-family: 'Montserrat', sans-serif;
+	padding: 70px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.shows .title-wrap {
+	width: 100%;
+
+}
+.buy-tickets h1{
+	background-color: #F9DDC6;
+}
+.shows .left-column, .shows .right-column {
+	width: 35%;
+}
+
+.left-column div {
+	display: flex;
+}
+
+.right-column div{
+	display: flex;
+}
+
+.shows .buy-tickets {
+	width: 100%;
+}
+.buy-tickets {
+	padding: 50px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.socialmedia{
+	margin: 0px 50px -80px 50px;
+	padding: 100px
+	width: 35%;
+}
+
+.left-column h2{
+	background-color: #F9DDC6;
+}
+
+.right-column h2{
+	background-color: #F9DDC6;
+}
+
+div.title-wrap h1 {
+	background-color: #DFB8A3;
+	color: #5C5C5C;
+	font-family: 'Cinzel', serif;
+	padding: 30px;
+	text-align: center;
+	width: 25%;
+	margin: 0 auto 50px auto;
+}
+
+div.buy-tickets a{
+	background-color: #F9DDC6;
+	color: #5C5C5C;
+	font-family: 'Cinzel', serif;
+	padding: 30px;
+	text-align: center;
+	width: 25%;
+	margin: 0 auto 50px auto;
+}
+
+div.left-column{
+	padding: 40px;
+	flex-direction: column;
+	background-color: #9E8F99;
+}
+
+div.right-column{
+	padding: 40px;
+	flex-direction: column;
+	background-color: #9E8F99;
+}
+
+div.form{
+	text-align: center; 
+}
+.form h3{
+	font-family: 'Cinzel', serif;
+	background-color: #9E8F99;
+	padding: 10px;
+	flex-wrap: wrap;
+}
+<!--
+div.footer{
+	flex-direction: row;
+}
+-->
+html, body, main {
+		  width: 100%;
+		  height: 100%;
+		  margin: 0;
+		  padding: 0;
+		}
+
+		#carousel {
+		  position: relative;
+		  height: 400px;
+		  top: 50%;
+		  transform: translateY(-50%);
+		  overflow: hidden;
+		}
+  		#carousel div {
+    		position: absolute;
+   			transition: transform 1s, left 1s, opacity 1s, z-index 0s;
+    		opacity: 1;
+    	}
+
+    	#carousel div img {
+      		width: 400px;
+      		transition: width 1s;
+      	}
+
+    #carousel .hideLeft {
+      left: 0%;
+      opacity: 0;
+      transform: translateY(50%) translateX(-50%);
+  	}
+
+    #carousel .hideLeft img {
+        width: 200px;
+    }
+
+    #carousel .hideRight {
+      left: 100%;
+      opacity: 0;
+      transform: translateY(50%) translateX(-50%);
+    }
+    
+    #carousel .hideRight img {
+        width: 200px;
+    }
+
+    #carousel .prev {
+      z-index: 5;
+      left: 30%;
+      transform: translateY(50px) translateX(-50%);
+	}
+
+    #carousel .prev img {
+        width: 300px;
+    }
+
+    #carousel .prevLeftSecond {
+      z-index: 4;
+      left: 15%;
+      transform: translateY(50%) translateX(-50%);
+      opacity: .7;
+    }
+
+    #carousel .prevLeftSecond img {
+        width: 200px;
+    }
+
+    #carousel .selected {
+      z-index: 10;
+      left: 50%;
+      transform: translateY(0px) translateX(-50%);
+	}
+
+    #carousel .next {
+      z-index: 5;
+      left: 70%;
+      transform: translateY(50px) translateX(-50%);
+	}
+    
+    #carousel .next img {
+        width: 300px;
+    }
+
+    #carousel .nextRightSecond {
+      z-index: 4;
+      left: 85%;
+      transform: translateY(50%) translateX(-50%);
+      opacity: .7;
+	}
+
+    #carousel .nextRightSecond img {
+        width: 200px;
+    }
+
+	.buttons {
+	  position: fixed;
+	  left: 50%;
+	  transform: translateX(-50%);
+	  bottom: 10px;
+	}
