@@ -154,7 +154,11 @@ div.form{
 	flex-wrap: wrap;
 }
 <!--
+div.footer svg{
+	width: 60px;
+}
 div.footer{
+	display: flex;
 	flex-direction: row;
 }
 -->
