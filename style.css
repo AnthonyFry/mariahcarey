@@ -13,6 +13,7 @@ header{
  display: flex;
  justify-content: space-around;
  font-family: 'Montserrat', sans-serif;
+ margin-bottom: 25px;
 }
 
 header .button {
@@ -73,6 +74,7 @@ nav a{
 .shows .title-wrap {
 	width: 100%;
 
+
 }
 .buy-tickets h1{
 	background-color: #F9DDC6;
@@ -98,11 +100,6 @@ nav a{
 	flex-wrap: wrap;
 	justify-content: space-around;
 }
-.socialmedia{
-	margin: 0px 50px -80px 50px;
-	padding: 100px;
-	width: 35%;
-}
 
 .left-column h2{
 	background-color: #F9DDC6;
@@ -114,6 +111,10 @@ nav a{
 
 div.title-wrap {
 	background-color: #DFB8A3;
+}
+
+.shows .title-wrap {
+	background-color: transparent;
 }
 
 div.title-wrap h1 {
@@ -158,11 +159,17 @@ div.form{
 	flex-wrap: wrap;
 }
 
+.socialmedia{
+	margin: 0px 50px -80px 50px;
+	padding: 100px;
+}
+
+
 div.footer{
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	width: 100%;
+	align-items: flex-start;
 }
 
 div.footer img{
