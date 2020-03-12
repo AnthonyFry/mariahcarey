@@ -100,7 +100,7 @@ nav a{
 }
 .socialmedia{
 	margin: 0px 50px -80px 50px;
-	padding: 100px
+	padding: 100px;
 	width: 35%;
 }
 
@@ -152,10 +152,6 @@ div.form{
 	background-color: #9E8F99;
 	padding: 10px;
 	flex-wrap: wrap;
-}
-
-display: flex;
-	flex-direction: row;
 }
 
 div.footer{
@@ -260,9 +256,9 @@ html, body, main {
         width: 200px;
     }
 
-	.buttons {
+.buttons {
 	  position: fixed;
 	  left: 50%;
 	  transform: translateX(-50%);
 	  bottom: 10px;
-	}
+}
